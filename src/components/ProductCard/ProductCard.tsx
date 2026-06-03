@@ -28,7 +28,7 @@ export default observer( function ProductCard ({product}: Props) {
                         <S.Image src={product.image} alt={product.name} />
                     </S.ImgWrap>
                     <S.Title>{product.name}</S.Title>
-                    <S.Text>Цена :{product.price} $</S.Text>
+                    <S.Text>Цена: {product.price} $</S.Text>
                 </Link>
             </S.Card>
 

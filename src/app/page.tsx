@@ -1,10 +1,12 @@
 'use client'
 
-import Container from "@/components/Container/Container";
+import Container from "@/components/ui/Container/Container";
 import ProductCard  from "@/components/ProductCard/ProductCard";
+import ProductGrid from "@/components/ProductGrid/ProductGrid";
 import { useStores } from "@/stores/StoreProvider";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
+import Header from "@/components/Header/Header";
 
 
 export default observer(function HomePage() {
@@ -20,12 +22,16 @@ export default observer(function HomePage() {
 
     return (
         <Container>
-          {productsStore.products.map((product) => (
-            <ProductCard
-            key={product.id}
-            product = {product}            
-            />
-          ))}
+          <Header/>
+
+          <ProductGrid>
+              {productsStore.products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product = {product}            
+                />
+              ))}
+          </ProductGrid>
         </Container>
     )
 })
