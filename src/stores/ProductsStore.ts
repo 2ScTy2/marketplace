@@ -7,6 +7,9 @@ export class ProductsStore {
     products: Product[] = []
     loading = false
     error: string | null = null;
+    
+    search = ""
+
 
     constructor() {
         makeAutoObservable(this)
@@ -34,6 +37,23 @@ export class ProductsStore {
         }
     }
 
+    setSearch(value: string) {
+        this.search = value
+    }
+
+    get filteredProduct() {
+        const search = this.search.toLowerCase()
+        
+        if (this.search === ''){
+            return this.products
+        }
+        return this.products.filter((p) => {
+            return p.name
+                .toLowerCase()
+                .includes(search)
+        })
+
+    }
     
 }
 
