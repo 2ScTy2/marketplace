@@ -1,17 +1,17 @@
-import { StoreProvider }from "@/stores/StoreProvider"
+import { Providers } from "@/providers/Provider";
 
 export default function RootLayout({
     children,
-}: Readonly<{
-    children: React.ReactNode
-}>) {
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="ru">
             <body>
-                <StoreProvider>
+                <Providers>
                     {children}
-                </StoreProvider>
+                </Providers>
             </body>
         </html>
-    )
+    );
 }

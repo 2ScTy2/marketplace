@@ -4,6 +4,8 @@ import { Product } from "@/shared/types/product"
 import { useStores } from "@/stores/StoreProvider"
 import { observer } from "mobx-react-lite"
 
+import * as S from './ProductCard.styled'
+
 interface Props {
     product: Product
 }
@@ -15,18 +17,20 @@ export default observer( function ProductCard ({product}: Props) {
 
 
     return (
-            <div>
-                <button 
-                    onClick={() => {favoritesStore.toggleFavorite(product)}}
-                >
-                    {isFav ? '⭐' : '☆'}
-                </button>
+            <S.Card>
                 <Link href={`/products/${product.id}`}>
-                    <img src={product.image} alt={product.name} />
-                    <h3>{product.name}</h3>
-                    <p>{product.price} $</p>
+                    <S.ImgWrap>
+                        <S.Button 
+                            onClick={() => {favoritesStore.toggleFavorite(product)}}
+                        >
+                            {isFav ? '⭐' : '☆'}
+                        </S.Button>
+                        <S.Image src={product.image} alt={product.name} />
+                    </S.ImgWrap>
+                    <S.Title>{product.name}</S.Title>
+                    <S.Text>Цена :{product.price} $</S.Text>
                 </Link>
-            </div>
+            </S.Card>
 
     )
 })

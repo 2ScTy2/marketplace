@@ -1,5 +1,6 @@
 'use client'
 
+import Container from "@/components/Container/Container";
 import ProductCard  from "@/components/ProductCard/ProductCard";
 import { useStores } from "@/stores/StoreProvider";
 import { observer } from "mobx-react-lite";
@@ -18,13 +19,13 @@ export default observer(function HomePage() {
   }
 
     return (
-        <div>
+        <Container>
           {productsStore.products.map((product) => (
             <ProductCard
             key={product.id}
             product = {product}            
             />
           ))}
-        </div>
+        </Container>
     )
 })
