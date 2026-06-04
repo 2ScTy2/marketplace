@@ -39,6 +39,7 @@ export class ProductsStore {
 
     setSearch(value: string) {
         this.search = value
+        this.filteredProduct
     }
 
     get filteredProduct() {
@@ -52,7 +53,6 @@ export class ProductsStore {
                 .toLowerCase()
                 .includes(search)
         })
-
     }
     
 }

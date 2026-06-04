@@ -23,9 +23,8 @@ export default observer(function HomePage() {
     return (
         <Container>
           <Header/>
-
           <ProductGrid>
-              {productsStore.products.map((product) => (
+              {productsStore.filteredProduct.map((product) => (
                 <ProductCard
                   key={product.id}
                   product = {product}            
