@@ -1,3 +1,4 @@
+import { FiShoppingCart } from "react-icons/fi";
 import styled from "styled-components";
 
 
@@ -32,4 +33,15 @@ export const Title = styled.h3`
 export const Text = styled.p` 
     color: ${({theme}) => theme.colors.text};
     margin:20px 0 20px 20px;
+`
+export const CartButton = styled.button`
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: ${({theme}) => theme.colors.primary};
+    padding: 10px 10px 5px;
+    border-radius: 50%;
+`
+export const CartIcon = styled(FiShoppingCart)`
+    color: #f5f7fb;
 `

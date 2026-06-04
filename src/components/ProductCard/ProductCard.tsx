@@ -26,6 +26,9 @@ export default observer( function ProductCard ({product}: Props) {
                             {isFav ? '⭐' : '☆'}
                         </S.Button>
                         <S.Image src={product.image} alt={product.name} />
+                        <S.CartButton>
+                            <S.CartIcon/>
+                        </S.CartButton>
                     </S.ImgWrap>
                     <S.Title>{product.name}</S.Title>
                     <S.Text>Цена: {product.price} $</S.Text>
