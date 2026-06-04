@@ -25,25 +25,36 @@ export class CartStore {
                 product,
                 quantity: 1
             })
+            this.saveCartItems()
         }
 
     }
-    removeFromCart(productId: number) {
-        const item = this.items.find(
-            i => i.product.id === productId
-        )
-        
-        if (!item) {
-            return
-        } 
 
-        if (item.quantity === 1) {
-            this.items = this.items.filter(
-                i => i.product.id !== productId
-            )
-        } else {
+    decreaseQuantity(id: number) {
+        const item = this.items.find(
+            i => i.product.id === id
+        )
+        if(!item) return
+
+        if(item.quantity !== 1) {
             item.quantity--
         }
+    }
+
+    increaseQuantity(id: number) {
+        const item = this.items.find(
+            i => i.product.id === id
+        )
+        if(!item) return
+
+        item.quantity++
+    }
+
+    removeFromCart(productId: number) {
+        this.items = this.items.filter(
+            i => i.product.id !== productId
+        )
+
     }
     saveCartItems() {
         localStorage.setItem('cart', JSON.stringify(this.items))
