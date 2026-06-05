@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { FiShoppingCart } from "react-icons/fi";
 import { MdOutlineFavorite } from "react-icons/md";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
@@ -22,7 +23,7 @@ export const ImgWrap = styled.div`
 export const Image = styled.img` 
     width: 100%;
 `
-export const Button = styled.button`
+export const Button = styled(motion.button)`
     position: absolute;
     top: 10px;
     right: 10px;
@@ -37,7 +38,7 @@ export const Text = styled.p`
     color: ${({theme}) => theme.colors.text};
     margin:20px 0 20px 20px;
 `
-export const CartButton = styled.button`
+export const CartButton = styled(motion.button)`
     position: absolute;
     bottom: 20px;
     right: 20px;

@@ -1,3 +1,5 @@
+'use client'
+
 import Cart from "./CartIcon/CartIcon";
 import Logo from "./Logo/Logo";
 import Profile from "./Profile/Profile";

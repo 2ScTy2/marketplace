@@ -26,6 +26,9 @@ export default observer( function ProductCard ({product}: Props) {
                                 e.stopPropagation()
                                 favoritesStore.toggleFavorite(product)
                             }}
+                            whileTap={{
+                                scale: 0.8
+                            }}
                         >
                             {isFav ? (<S.FavActive/>) : (<S.FavNoTActive/>)}
                         </S.Button>
@@ -35,6 +38,9 @@ export default observer( function ProductCard ({product}: Props) {
                                 e.preventDefault()
                                 e.stopPropagation()
                                 cartStore.addToCart(product)
+                            }}
+                            whileTap={{
+                                scale: 0.8
                             }}
                         >
                             <S.CartIcon/>

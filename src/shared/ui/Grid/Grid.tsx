@@ -1,5 +1,5 @@
 
-import * as S from './ProductGrid.styled'
+import * as S from './Grid.styled'
 
 type GridProps = {
     children: React.ReactNode

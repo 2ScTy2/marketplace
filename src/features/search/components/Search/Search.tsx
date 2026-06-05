@@ -1,3 +1,4 @@
+'use client'
 
 import { useStores } from '@/providers/StoreProvider'
 import * as S from './Search.styled'

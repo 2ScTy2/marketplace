@@ -1,4 +1,8 @@
+'use client'
+
 import { Providers } from "@/providers/Provider";
+import Container from "@/shared/ui/Container/Container";
+import Header from "@/widgets/Header/Header";
 
 export default function RootLayout({
     children,
@@ -8,9 +12,12 @@ export default function RootLayout({
     return (
         <html lang="ru">
             <body>
-                <Providers>
-                    {children}
-                </Providers>
+                <Container>
+                    <Providers>
+                        <Header/>
+                        {children}
+                    </Providers>
+                </Container>
             </body>
         </html>
     );
