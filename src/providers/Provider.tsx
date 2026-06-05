@@ -6,6 +6,8 @@ import { StoreProvider } from "@/providers/StoreProvider";
 import { theme } from "@/styles/theme";
 import { GlobalStyle } from "@/styles/global";
 
+import Notification  from "@/features/notification/store/components/Notification"
+
 export function Providers({
     children,
 }: {
@@ -14,7 +16,11 @@ export function Providers({
     return (
         <StoreProvider>
             <ThemeProvider theme={theme}>
+
                 <GlobalStyle />
+                
+                <Notification/>
+
                 {children}
             </ThemeProvider>
         </StoreProvider>

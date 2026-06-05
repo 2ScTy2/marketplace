@@ -11,10 +11,20 @@ interface Props {
 }
 
 export default observer( function ProductCard ({product}: Props) {
-    const { favoritesStore, cartStore } = useStores()
+    const { favoritesStore, cartStore, notificationStore } = useStores()
 
     const isFav = favoritesStore.isFavorite(product.id)
 
+    function handleFav () {
+        if(isFav) {
+            notificationStore.show('Удалено из избранного')
+
+        }else {
+            notificationStore.show('Добавлено в избранное')
+        }
+        favoritesStore.toggleFavorite(product)
+                                
+    }
 
     return (
             <S.Card>
@@ -24,7 +34,7 @@ export default observer( function ProductCard ({product}: Props) {
                             onClick={(e) => {
                                 e.preventDefault()
                                 e.stopPropagation()
-                                favoritesStore.toggleFavorite(product)
+                                handleFav()
                             }}
                             whileTap={{
                                 scale: 0.8
@@ -38,6 +48,7 @@ export default observer( function ProductCard ({product}: Props) {
                                 e.preventDefault()
                                 e.stopPropagation()
                                 cartStore.addToCart(product)
+                                notificationStore.show('Добавлено в корзину')
                             }}
                             whileTap={{
                                 scale: 0.8

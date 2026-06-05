@@ -19,13 +19,15 @@ export default observer(function HomePage() {
   }
 
     return (
-          <ProductGrid>
-              {productsStore.filteredProduct.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product = {product}            
-                />
-              ))}
-          </ProductGrid>
+          <>
+            <ProductGrid>
+                {productsStore.filteredProduct.map((product) => (
+                  <ProductCard
+                    key={product.id}
+                    product = {product}            
+                  />
+                ))}
+            </ProductGrid>
+          </>  
     )
 })
