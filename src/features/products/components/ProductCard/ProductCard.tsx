@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { Product } from "@/shared/types/product"
-import { useStores } from "@/stores/StoreProvider"
+import { useStores } from "@/providers/StoreProvider"
 import { observer } from "mobx-react-lite"
 
 import * as S from './ProductCard.styled'
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default observer( function ProductCard ({product}: Props) {
-    const { favoritesStore } = useStores()
+    const { favoritesStore, cartStore } = useStores()
 
     const isFav = favoritesStore.isFavorite(product.id)
 
@@ -21,12 +21,22 @@ export default observer( function ProductCard ({product}: Props) {
                 <Link href={`/products/${product.id}`}>
                     <S.ImgWrap>
                         <S.Button 
-                            onClick={() => {favoritesStore.toggleFavorite(product)}}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                favoritesStore.toggleFavorite(product)
+                            }}
                         >
-                            {isFav ? '⭐' : '☆'}
+                            {isFav ? (<S.FavActive/>) : (<S.FavNoTActive/>)}
                         </S.Button>
                         <S.Image src={product.image} alt={product.name} />
-                        <S.CartButton>
+                        <S.CartButton
+                            onClick={(e) => {
+                                e.preventDefault()
+                                e.stopPropagation()
+                                cartStore.addToCart(product)
+                            }}
+                        >
                             <S.CartIcon/>
                         </S.CartButton>
                     </S.ImgWrap>

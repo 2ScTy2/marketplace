@@ -1,6 +1,6 @@
 'use client'
 
-import ProductCard from "@/components/ProductCard/ProductCard";
+import ProductCard from "@/features/products/components/ProductCard/ProductCard";
 import { useStores } from "@/stores/StoreProvider";
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";

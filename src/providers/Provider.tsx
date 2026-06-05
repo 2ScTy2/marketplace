@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "styled-components";
 
-import { StoreProvider } from "@/stores/StoreProvider";
+import { StoreProvider } from "@/providers/StoreProvider";
 import { theme } from "@/styles/theme";
 import { GlobalStyle } from "@/styles/global";
 

@@ -9,4 +9,6 @@ export const HeaderWrap = styled.div`
 
 
 `
-export const Icons = styled.div ``
+export const Icons = styled.div `
+    display: flex;
+`

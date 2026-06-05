@@ -8,8 +8,7 @@ type CartItem = {
 
 export class CartStore {
     items: CartItem[] = []
-    quantity: number = 0
-
+    
     constructor() {
         makeAutoObservable(this)
     }

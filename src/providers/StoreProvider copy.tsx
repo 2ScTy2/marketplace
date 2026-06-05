@@ -6,8 +6,7 @@ import { RootStore } from "./RootStore"
 
 const store = new RootStore()
 
-const StoreContext =
-    createContext(store)
+const StoreContext = createContext(store)
 
 export const StoreProvider = ({
     children
@@ -23,5 +22,4 @@ export const StoreProvider = ({
     )
 }
 
-export const useStores = () =>
-    useContext(StoreContext)
+export const useStores = () => useContext(StoreContext)

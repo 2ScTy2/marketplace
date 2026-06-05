@@ -1,5 +1,5 @@
 
-import { useStores } from '@/stores/StoreProvider'
+import { useStores } from '@/providers/StoreProvider'
 import * as S from './Search.styled'
 import { observer } from 'mobx-react-lite'
 

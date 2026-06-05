@@ -1,5 +1,8 @@
 import { FiShoppingCart } from "react-icons/fi";
+import { MdOutlineFavorite } from "react-icons/md";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 import styled from "styled-components";
+
 
 
 export const Card = styled.div`
@@ -44,4 +47,11 @@ export const CartButton = styled.button`
 `
 export const CartIcon = styled(FiShoppingCart)`
     color: #f5f7fb;
+`
+export const FavActive = styled(MdOutlineFavorite)`
+    font-size: 18px;
+    color: red;
+`
+export const FavNoTActive = styled(MdOutlineFavoriteBorder)`
+    font-size: 18px;
 `

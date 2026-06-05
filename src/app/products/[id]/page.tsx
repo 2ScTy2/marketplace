@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { observer } from "mobx-react-lite"
 import { useParams } from "next/navigation"
 
-import { useStores } from "@/stores/StoreProvider"
+import { useStores } from "@/providers/StoreProvider"
 
 function ProductPage() {
     const params = useParams()
